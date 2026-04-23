@@ -1,3 +1,6 @@
+let numRows = 3;
+let numCols = 3;
+
 
 // 1. Setup our starting variables
 // let is a keyword used to declare a variable.
@@ -58,9 +61,29 @@ document.getElementById("start-button").addEventListener("click", startGame);
 
 //5.End of game
 
-function endGame(){
-    if(allCells.innerText != ""){
-        console.log("Its due");
+function checkGameEnd(){
+    //check rows
+    //check diagonals
+    //check for empty cells
+
+    //0 1 2
+    //3 4 5
+    //6 7 8
+
+    //row++ -> index+numCols
+
+    for(let row= 0; row<numRows; row++){
+        const currentRow = row * numCols;
+        const firstSymbol = cells[rowStartIndex].innerText;
+        let isSameSymbol = true;
+        if(!firstSymbol) continue;
+
+        for(let col=0; col<numCols; COL++){
+            const currentSymbol = cells[rowStartIndex+col].innerText;
+            isSameSymbol = isSameSymbol && (firstSymbol === currentSymbol);
+        }
+
+        if(isSameSymbol) alert('Player' ${firstSymbol} 'has won');
     }
 
 }
