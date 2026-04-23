@@ -35,14 +35,18 @@ function checkGameEnd(){
         const currentRow = row * numCols;
         const firstSymbol = cells[rowStartIndex].innerText;
         let isSameSymbol = true;
-        if(!firstSymbol) continue;
-
+        if(!firstSymbol){ 
+            isFull = false;
+            continue;
+        }
         for(let col=0; col<numCols; COL++){
             const currentSymbol = cells[rowStartIndex+col].innerText;
+            if(!currentSymbol) isFull = false;
             isSameSymbol = isSameSymbol && (firstSymbol === currentSymbol);
         }
 
         if(isSameSymbol) alert('Player' ${firstSymbol} 'has won');
     }
-
+    
+    else if(isFull) aler('The game is a draw')
 }
