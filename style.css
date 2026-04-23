@@ -1,0 +1,16 @@
+#gridGame {
+    border-collapse: collapse; /* Merges cell borders into a single grid */
+    visibility: hidden;        /* Hides the grid but keeps its space on the screen */
+    margin: 20px 0;           /* Optional: adds some breathing room above/below the grid */
+}
+
+.cell {
+    border: 2px solid black; 
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;   /* Ensures X and O are centered vertically */
+    font-size: 24px;          /* Makes the X and O nice and big */
+    font-family: sans-serif;
+    cursor: pointer;          /* Changes the mouse to a hand when hovering over a cell */
+}
